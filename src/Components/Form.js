@@ -3,7 +3,9 @@ function Form(props) {
     const {
         handleChange,
         formData,
-        submit
+        submit,
+        disabled,
+        errors
     } = props;
 
     const change = (evt => {
@@ -17,7 +19,7 @@ function Form(props) {
         <div id='form' className='container'>
             <h3 className='tight'>Pizza Order Form</h3>
         <form id='pizza-form' onSubmit={submit} >
-            <div><label>Name:
+            <div><label>Name: <span className='error'>{errors.name}</span>
              <input 
                 type='text' 
                 id='name-input'
@@ -27,7 +29,7 @@ function Form(props) {
                 placeholder='Your name here...'/>
             </label></div>
             
-            <div><label>Size:
+            <div><label>Size: <span className='error'>{errors.size}</span>
                 <select 
                     id='size-dropdown'
                     onChange={change} 
@@ -94,7 +96,7 @@ function Form(props) {
                 />
             </label></div>
 
-            <button id='order-button' >Add to Order</button>
+            <button id='order-button' disabled={disabled}>Add to Order</button>
         </form>
 
         </div> 

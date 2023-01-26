@@ -2,10 +2,15 @@ import React from "react";
 import { Route, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import * as Yup from 'yup';
 
 import './App.css';
 import Home from './Components/Home';
 import Form from './Components/Form';
+import schema from './formSchema';
+
+const initialOrders = [];
+const initialDisabled = true;
 
 const App = () => {
   const initialValues = { 
@@ -18,7 +23,7 @@ const App = () => {
     peppers: false  
   };
   const [ formData, setFormData ] = useState(initialValues);
-  const [ orders, setOrders ] = useState([]);
+  const [ orders, setOrders ] = useState(initialOrders);
   const [ errors, setErrors ] = useState({ 
     name: '', 
     size: '', 
@@ -28,8 +33,16 @@ const App = () => {
     onion: '',
     peppers: ''  
   })
+  const [ disabled, setDisabled ] = useState(initialDisabled)
 
+ const validate = (name, value) => {
+  Yup.reach(schema, name)
+    .validate(value)
+    .then(() => setErrors({...errors, [name]: ''}))
+    .catch(err => setErrors({...errors, [name]: err.errors[0]}))
+ }
   const handleChange = ((name, value) => {
+    validate(name, value)
     setFormData({...formData, [name]:value})
   })
   const handleSubmit = ((evt) => {
@@ -48,8 +61,12 @@ const App = () => {
     setFormData(initialValues)
   })
 
- // useEffect(() => {console.log(formData)},[formData])
-  //useEffect(() => console.log(orders),[orders] )
+
+  useEffect(() => {
+    schema.isValid(formData).then(valid => setDisabled(!valid))
+  },[formData])
+
+
 
   return (
     
@@ -71,6 +88,8 @@ const App = () => {
           handleChange={handleChange}
           formData={formData}
           submit={handleSubmit}
+          disabled={disabled}
+          errors={errors}
           />
       </Route>
     </>

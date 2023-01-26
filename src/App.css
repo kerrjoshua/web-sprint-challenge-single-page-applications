@@ -118,4 +118,7 @@ label, legend {
   font-size: small;
 }
 
+.error {
+  color: yellow;
+}
 
