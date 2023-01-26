@@ -34,7 +34,7 @@ const App = () => {
   })
   const handleSubmit = ((evt) => {
     evt.preventDefault();
-    axios.post('https://reqres.in/api/users', formData)
+    axios.post('https://reqres.in/api/orders', formData)
       .then(res => {
         const { name, size, olives, mushrooms, onion, peppers, specIns, createdAt} = res.data;
         // I want to create an array that includes the names of the toppings only if their value in the data object is true. 
@@ -44,12 +44,12 @@ const App = () => {
         const newOrder = { name: name, size: size, specIns: specIns, key: createdAt, toppings: theToppings}
         setOrders([newOrder].concat( ...orders))
       })
-      .catch(err => console.error(err()))
+      .catch(err => console.error(err))
     setFormData(initialValues)
   })
 
  // useEffect(() => {console.log(formData)},[formData])
-  useEffect(() => console.log(orders),[orders] )
+  //useEffect(() => console.log(orders),[orders] )
 
   return (
     
@@ -61,12 +61,12 @@ const App = () => {
         <div className="head" id='right'>
           <nav className='main-nav'>
             <Link to='/'>Home</Link>
-            <Link to='/order'>Order</Link>
+            <Link to='/pizza' id='order-pizza'>Order</Link>
           </nav>
         </div>
       </header>
       <Route exact path="/" component={Home}/>
-      <Route path='/order'>
+      <Route path='/pizza'>
         <Form 
           handleChange={handleChange}
           formData={formData}
