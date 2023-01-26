@@ -71,6 +71,14 @@ div #left.head {
   /* border: 2px solid black; */
 }
 
+form { 
+  color: lightgray;
+}
+
+input {
+  background-color: lightgray;
+}
+
 .main-nav * {
   text-decoration: none;
   color: crimson;

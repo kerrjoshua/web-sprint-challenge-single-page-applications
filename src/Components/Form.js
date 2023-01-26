@@ -2,7 +2,8 @@ function Form(props) {
 
     const {
         handleChange,
-        formData
+        formData,
+        submit
     } = props;
 
     const change = (evt => {
@@ -15,7 +16,7 @@ function Form(props) {
     return (
         <div id='form' className='container'>
             <h3 className='tight'>Pizza Order Form</h3>
-        <form id='pizza-form' >
+        <form id='pizza-form' onSubmit={submit} >
             <div><label>Name:
              <input 
                 type='text' 
