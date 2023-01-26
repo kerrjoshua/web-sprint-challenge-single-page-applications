@@ -1,4 +1,4 @@
-function Home() {
+function Home(props) {
 return (
     <div id='home' className='container'>
     <h2>Welcome!</h2>
