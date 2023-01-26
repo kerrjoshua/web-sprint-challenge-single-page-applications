@@ -1,8 +1,9 @@
 function Home() {
 return (
-    <>
-    <h2>Home Route!! Yeah!!!</h2>
-    </>
+    <div id='home' className='container'>
+    <h2>Welcome!</h2>
+    <p>Please click on the Order link above to place an order.</p>
+    </div>
 
 )
 }

@@ -10,10 +10,10 @@ const App = () => {
     
     <>
       <header>
-        <div className="left">
+        <div className='head' id="left">
         <h1 className='tight'>Lambda Eats</h1>
         <p className='tight'>Stuff your gobb and get back to it!</p></div>
-        <div className="right">
+        <div className="head" id='right'>
           <nav className='main-nav'>
             <Link to='/'>Home</Link>
             <Link to='/order'>Order</Link>
