@@ -73,7 +73,7 @@ const App = () => {
     <>
       <header>
         <div className='head' id="left">
-        <h1 className='tight'>Lambda Eats</h1>
+        <h1 className='tight'>Bloomtech Eats</h1>
         <p className='tight'>Stuff your gobb and get back to it!</p></div>
         <div className="head" id='right'>
           <nav className='main-nav'>
