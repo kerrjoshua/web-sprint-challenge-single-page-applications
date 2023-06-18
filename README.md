@@ -1,9 +1,5 @@
 # Single Page Applications Sprint Challenge
 
-**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
-**READ ALL INSTRUCTIONS BEFORE REACHING OUT TO ASK A QUESTION!!**
-(that above part was because the FAQs section answers 75% of questions)
-
 This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored **single page applications**. During this sprint, you studied **routing, forms, and testing in cypress**. In your challenge this sprint, you will demonstrate your mastery of these skills by creating **Bloomtech Eats**, a website designed to bring food to hungry coders.
 
 This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
